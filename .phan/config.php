@@ -335,6 +335,7 @@ return [
     'directory_list' => [
         'src',
         'vendor/mikey179/vfsstream/src/main/php',
+        'vendor/nikic/php-parser/lib',
         'vendor/phpunit/phpunit/src',
         'vendor/pimple/pimple/src',
         'vendor/symfony/console',
