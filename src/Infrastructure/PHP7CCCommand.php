@@ -56,7 +56,7 @@ class PHP7CCCommand extends Command
                 'e',
                 InputOption::VALUE_OPTIONAL,
                 'Which file extensions do you want to check (separate multiple extensions with commas)?',
-                'php'
+                'php,inc,html'
             )->addOption(
                 static::EXCEPT_OPTION_NAME,
                 'x',
