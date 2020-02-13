@@ -4,7 +4,7 @@ namespace code\Analysis\Scope;
 
 use Sstalle\php7cc\Analysis\Scope\FunctionLikeScope;
 
-class FunctionLikeScopeTest extends \PHPUnit_Framework_TestCase
+class FunctionLikeScopeTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider returnsCorrectParameterNamesProvider

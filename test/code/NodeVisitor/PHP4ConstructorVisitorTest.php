@@ -2,7 +2,6 @@
 
 namespace code\NodeVisitor;
 
-use PHPUnit_Framework_TestCase;
 use Sstalle\php7cc\NodeVisitor\PHP4ConstructorVisitor;
 
 /**
@@ -10,7 +9,7 @@ use Sstalle\php7cc\NodeVisitor\PHP4ConstructorVisitor;
  *
  * @author Ron Rademaker
  */
-class PHP4ConstructorVisitorTest extends PHPUnit_Framework_TestCase
+class PHP4ConstructorVisitorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Test if an anonymous class is dealt with correctly.

@@ -21,7 +21,7 @@ class MethodCalleeReflectorTest extends AbstractCalleeReflectorTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->reflector = new MethodCalleeReflector($this->buildClassReflector());
     }
@@ -53,7 +53,7 @@ class MethodCalleeReflectorTest extends AbstractCalleeReflectorTest
      */
     protected function buildClassReflector()
     {
-        $reflector = $this->getMock('Sstalle\php7cc\Reflection\Reflector\ClassReflectorInterface');
+        $reflector = $this->createMock('Sstalle\php7cc\Reflection\Reflector\ClassReflectorInterface');
         $reflector->method('supports')
             ->will($this->returnCallback(function ($className) {
                 return $className === 'DateTime';
@@ -61,9 +61,9 @@ class MethodCalleeReflectorTest extends AbstractCalleeReflectorTest
         $self = $this;
         $reflector->method('reflect')
             ->will($this->returnCallback(function () use ($self) {
-                $classReflector = $self->getMock('Sstalle\php7cc\Reflection\ReflectionClassInterface');
+                $classReflector = $self->createMock('Sstalle\php7cc\Reflection\ReflectionClassInterface');
                 $classReflector->method('getMethod')
-                    ->willReturn($self->getMock('Sstalle\php7cc\Reflection\ReflectionMethodInterface'));
+                    ->willReturn($self->createMock('Sstalle\php7cc\Reflection\ReflectionMethodInterface'));
 
                 return $classReflector;
             }));

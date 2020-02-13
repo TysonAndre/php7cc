@@ -12,7 +12,7 @@ function is_dir($path)
     return $path[0] === '/';
 }
 
-class ExcludedPathCanonicalizerTest extends \PHPUnit_Framework_TestCase
+class ExcludedPathCanonicalizerTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider canonicalizeAbsolutePathsProvider

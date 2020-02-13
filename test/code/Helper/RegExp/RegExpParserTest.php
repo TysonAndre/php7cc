@@ -4,14 +4,14 @@ namespace code\Helper\RegExp;
 
 use Sstalle\php7cc\Helper\RegExp\RegExpParser;
 
-class RegExpParserTest extends \PHPUnit_Framework_TestCase
+class RegExpParserTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var RegExpParser
      */
     protected $parser;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->parser = new RegExpParser();
     }

@@ -4,7 +4,7 @@ namespace code\Iterator;
 
 use org\bovigo\vfs\vfsStream;
 
-abstract class AbstractFilteringIteratorTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractFilteringIteratorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider filterFilesProvider
@@ -48,7 +48,7 @@ abstract class AbstractFilteringIteratorTest extends \PHPUnit_Framework_TestCase
         );
 
         if ($expectException) {
-            $this->setExpectedException('\\InvalidArgumentException');
+            $this->expectException('\\InvalidArgumentException');
         }
 
         $iteratorClassReflection = new \ReflectionClass($this->getIteratorClass());

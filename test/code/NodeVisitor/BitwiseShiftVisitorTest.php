@@ -6,7 +6,7 @@ use PhpParser\Node\Expr;
 use PhpParser\Node\Scalar\LNumber;
 use Sstalle\php7cc\CompatibilityViolation\StringContext;
 
-class BitwiseShiftVisitorTest extends \PHPUnit_Framework_TestCase
+class BitwiseShiftVisitorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider testThrowsExceptionForInvalidIntSizeProvider
@@ -14,7 +14,7 @@ class BitwiseShiftVisitorTest extends \PHPUnit_Framework_TestCase
     public function testThrowsExceptionForInvalidIntSize($intSize, $isSizeValid)
     {
         if (!$isSizeValid) {
-            $this->setExpectedException('\InvalidArgumentException');
+            $this->expectException('\InvalidArgumentException');
         }
 
         new \Sstalle\php7cc\NodeVisitor\BitwiseShiftVisitor($intSize);

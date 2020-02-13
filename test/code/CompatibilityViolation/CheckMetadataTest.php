@@ -4,14 +4,14 @@ namespace code\CompatibilityViolation;
 
 use Sstalle\php7cc\CompatibilityViolation\CheckMetadata;
 
-class CheckMetadataTest extends \PHPUnit_Framework_TestCase
+class CheckMetadataTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var CheckMetadata
      */
     protected $metadata;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->metadata = new CheckMetadata();
     }

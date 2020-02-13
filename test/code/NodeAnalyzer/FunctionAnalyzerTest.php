@@ -11,7 +11,7 @@ use PhpParser\Node\Stmt\Function_;
 use Sstalle\php7cc\NodeAnalyzer\FunctionAnalyzer;
 use Sstalle\php7cc\NodeAnalyzer\Reflection\FunctionLike\CalleeReflectorInterface;
 
-class FunctionAnalyzerTest extends \PHPUnit_Framework_TestCase
+class FunctionAnalyzerTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var FunctionAnalyzer
@@ -187,7 +187,7 @@ class FunctionAnalyzerTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $reflector = $this->buildReflector();
 
@@ -205,7 +205,7 @@ class FunctionAnalyzerTest extends \PHPUnit_Framework_TestCase
             'preg_match' => array(2),
         );
 
-        $reflector = $this->getMock('Sstalle\php7cc\NodeAnalyzer\Reflection\FunctionLike\CalleeReflectorInterface');
+        $reflector = $this->createMock('Sstalle\php7cc\NodeAnalyzer\Reflection\FunctionLike\CalleeReflectorInterface');
         $reflector->method('supports')
             ->will($this->returnCallback(function (FuncCall $callNode) use ($byReferenceArgumentPositionsByFunction) {
                 return in_array($callNode->name->toString(), array_keys($byReferenceArgumentPositionsByFunction));
@@ -215,8 +215,8 @@ class FunctionAnalyzerTest extends \PHPUnit_Framework_TestCase
         $reflector->method('reflect')
             ->will($this->returnCallback(function (FuncCall $callNode) use ($self, $byReferenceArgumentPositionsByFunction) {
                 $functionName = $callNode->name->toString();
-                $functionReflection = $self->getMock(
-                    'Sstalle\php7cc\NodeAnalyzer\Reflection\ReflectionFunctionInterface',
+                $functionReflection = $self->createMock(
+                    'Sstalle\php7cc\Reflection\ReflectionFunctionInterface',
                     array('getByReferenceParameterPositions')
                 );
                 $functionReflection->method('getByReferenceParameterPositions')

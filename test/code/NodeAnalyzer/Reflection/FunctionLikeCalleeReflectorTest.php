@@ -13,7 +13,7 @@ use Sstalle\php7cc\Reflection\Reflector\ClassReflectorInterface;
 use Sstalle\php7cc\Reflection\Reflector\FunctionReflectorInterface;
 use Sstalle\php7cc\Reflection\Reflector\ReflectorInterface;
 
-class FunctionLikeCalleeReflectorTest extends \PHPUnit_Framework_TestCase
+class FunctionLikeCalleeReflectorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider reflectorsCallNodesProvider
@@ -40,7 +40,7 @@ class FunctionLikeCalleeReflectorTest extends \PHPUnit_Framework_TestCase
     public function testReflectsOnSupportedCallNodes(array $delegateReflectors, $callNode, $isSupported, $expectedReflectionType)
     {
         if (!$isSupported) {
-            $this->setExpectedException('Sstalle\php7cc\NodeAnalyzer\Reflection\Exception\UnsupportedNodeTypeException');
+            $this->expectException('Sstalle\php7cc\NodeAnalyzer\Reflection\Exception\UnsupportedNodeTypeException');
         }
 
         $reflector = new FunctionLikeCalleeReflector($delegateReflectors);
@@ -197,14 +197,14 @@ class FunctionLikeCalleeReflectorTest extends \PHPUnit_Framework_TestCase
      */
     private function buildFunctionReflector(array $supportedFunctions)
     {
-        $reflector = $this->getMock('Sstalle\php7cc\Reflection\Reflector\FunctionReflectorInterface');
+        $reflector = $this->createMock('Sstalle\php7cc\Reflection\Reflector\FunctionReflectorInterface');
         $reflector->method('supports')
             ->will($this->returnCallback(function ($callNode) use ($supportedFunctions) {
                 return $callNode instanceof FuncCall
                     && in_array($callNode->name->toString(), $supportedFunctions, true);
             }));
         $reflector->method('reflect')
-            ->willReturn($this->getMock('Sstalle\php7cc\Reflection\ReflectionFunctionInterface'));
+            ->willReturn($this->createMock('Sstalle\php7cc\Reflection\ReflectionFunctionInterface'));
 
         return $reflector;
     }
@@ -216,7 +216,7 @@ class FunctionLikeCalleeReflectorTest extends \PHPUnit_Framework_TestCase
      */
     private function buildClassReflector(array $supportedClasses)
     {
-        $reflector = $this->getMock('Sstalle\php7cc\Reflection\Reflector\ClassReflectorInterface');
+        $reflector = $this->createMock('Sstalle\php7cc\Reflection\Reflector\ClassReflectorInterface');
         $reflector->method('supports')
             ->will($this->returnCallback(function ($callNode) use ($supportedClasses) {
                 $r = $callNode instanceof StaticCall
@@ -228,7 +228,7 @@ class FunctionLikeCalleeReflectorTest extends \PHPUnit_Framework_TestCase
                     && in_array($callNode->class->toString(), $supportedClasses, true);
             }));
         $reflector->method('reflect')
-            ->willReturn($this->getMock('Sstalle\php7cc\Reflection\ReflectionClassInterface'));
+            ->willReturn($this->createMock('Sstalle\php7cc\Reflection\ReflectionClassInterface'));
 
         return $reflector;
     }

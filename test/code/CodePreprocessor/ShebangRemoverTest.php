@@ -4,7 +4,7 @@ namespace code\CodePreprocessor;
 
 use Sstalle\php7cc\CodePreprocessor\ShebangRemover;
 
-class ShebangRemoverTest extends \PHPUnit_Framework_TestCase
+class ShebangRemoverTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var ShebangRemover
@@ -14,7 +14,7 @@ class ShebangRemoverTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->remover = new ShebangRemover();
     }

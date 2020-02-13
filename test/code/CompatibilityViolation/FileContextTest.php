@@ -7,7 +7,7 @@ use Sstalle\php7cc\CompatibilityViolation\Message;
 use Sstalle\php7cc\Error\CheckError;
 use Symfony\Component\Finder\SplFileInfo as BaseSplFileInfo;
 
-class FileContextTest extends \PHPUnit_Framework_TestCase
+class FileContextTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider testGetCheckedResourceNameProvider

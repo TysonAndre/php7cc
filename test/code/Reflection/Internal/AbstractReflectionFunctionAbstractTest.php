@@ -4,7 +4,7 @@ namespace code\Reflection\Internal;
 
 use Sstalle\php7cc\Reflection\Internal\ReflectionFunctionAbstract;
 
-abstract class AbstractReflectionFunctionAbstractTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractReflectionFunctionAbstractTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param \ReflectionFunctionAbstract $internalReflectionFunction
@@ -184,7 +184,7 @@ abstract class AbstractReflectionFunctionAbstractTest extends \PHPUnit_Framework
      */
     private function buildInternalReflectionFunctionAbstract($name, array $parameters = array())
     {
-        $internalReflectionFunction = $this->getMock('\ReflectionFunctionAbstract', array(), array(), '', false);
+        $internalReflectionFunction = $this->createMock('\ReflectionFunctionAbstract', array(), array(), '', false);
         $internalReflectionFunction->method('getName')
             ->willReturn($name);
 
@@ -219,7 +219,7 @@ abstract class AbstractReflectionFunctionAbstractTest extends \PHPUnit_Framework
      */
     private function buildInternalReflectionParameter($name, $position, $isPassedByReference)
     {
-        $internalReflectionParameter = $this->getMock(
+        $internalReflectionParameter = $this->createMock(
             '\ReflectionParameter',
             array('getName', 'getPosition', 'isPassedByReference'),
             array(),

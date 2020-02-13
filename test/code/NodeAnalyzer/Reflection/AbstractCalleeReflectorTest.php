@@ -7,7 +7,7 @@ use Sstalle\php7cc\NodeAnalyzer\Reflection\FunctionLike\FunctionCalleeReflector;
 use Sstalle\php7cc\NodeAnalyzer\Reflection\FunctionLike\MethodCalleeReflector;
 use Sstalle\php7cc\Reflection\ReflectionFunctionAbstractInterface;
 
-abstract class AbstractCalleeReflectorTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractCalleeReflectorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @return FunctionCalleeReflector|MethodCalleeReflector
@@ -39,7 +39,7 @@ abstract class AbstractCalleeReflectorTest extends \PHPUnit_Framework_TestCase
     public function testReflectsOnSupportedCallNodes($callNode, $isSupported)
     {
         if (!$isSupported) {
-            $this->setExpectedException('Sstalle\php7cc\NodeAnalyzer\Reflection\Exception\UnsupportedNodeTypeException');
+            $this->expectException('Sstalle\php7cc\NodeAnalyzer\Reflection\Exception\UnsupportedNodeTypeException');
         }
 
         $reflection = $this->getReflector()->reflect($callNode);

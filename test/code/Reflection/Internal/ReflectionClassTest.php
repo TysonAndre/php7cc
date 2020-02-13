@@ -4,7 +4,7 @@ namespace code\Reflection\Internal;
 
 use Sstalle\php7cc\Reflection\Internal\ReflectionClass;
 
-class ReflectionClassTest extends \PHPUnit_Framework_TestCase
+class ReflectionClassTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var ReflectionClass
@@ -24,7 +24,7 @@ class ReflectionClassTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->internalReflectionMethod = $this->buildReflectionMethod();
         $this->internalReflectionClass = $this->buildInternalReflectionClass($this->internalReflectionMethod);
@@ -55,7 +55,7 @@ class ReflectionClassTest extends \PHPUnit_Framework_TestCase
      */
     private function buildReflectionMethod()
     {
-        $internalReflectionMethod = $this->getMock('\ReflectionMethod', array('getName'), array(), '', false);
+        $internalReflectionMethod = $this->createMock('\ReflectionMethod', array('getName'), array(), '', false);
         $internalReflectionMethod->method('getName')
             ->willReturn('test');
 
@@ -69,7 +69,7 @@ class ReflectionClassTest extends \PHPUnit_Framework_TestCase
      */
     private function buildInternalReflectionClass(\ReflectionMethod $reflectionMethod)
     {
-        $internalReflectionClass = $this->getMock(
+        $internalReflectionClass = $this->createMock(
             '\ReflectionClass',
             array('getName', 'getMethod', 'getMethods'),
             array(),

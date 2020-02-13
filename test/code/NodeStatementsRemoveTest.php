@@ -8,14 +8,14 @@ use PhpParser\Node\Stmt\Switch_;
 use PhpParser\NodeAbstract;
 use Sstalle\php7cc\NodeStatementsRemover;
 
-class NodeStatementsRemoveTest extends \PHPUnit_Framework_TestCase
+class NodeStatementsRemoveTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var NodeStatementsRemover
      */
     protected $statementsRemover;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->statementsRemover = new NodeStatementsRemover();
     }

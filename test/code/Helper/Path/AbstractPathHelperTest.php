@@ -4,14 +4,14 @@ namespace code\Helper\Path;
 
 use Sstalle\php7cc\Helper\Path\PathHelperInterface;
 
-abstract class AbstractPathHelperTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractPathHelperTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var PathHelperInterface
      */
     protected $pathHelper;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->pathHelper = $this->createPathHelper();
     }

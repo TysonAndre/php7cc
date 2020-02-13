@@ -7,7 +7,7 @@ use Symfony\Component\Finder\SplFileInfo;
 
 require dirname(__FILE__) . '/realpath.php';
 
-class FileDirectoryListRecursiveIteratorTest extends \PHPUnit_Framework_TestCase
+class FileDirectoryListRecursiveIteratorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider testRelativePathNamesProvider

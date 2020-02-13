@@ -4,7 +4,7 @@ namespace code\Token;
 
 use Sstalle\php7cc\Token\TokenCollection;
 
-class TokenCollectionTest extends \PHPUnit_Framework_TestCase
+class TokenCollectionTest extends \PHPUnit\Framework\TestCase
 {
     protected static $tokens = array('foo', 'bar', "\n", "\r\n", "\t", 'baz', 'foo1', 'bar1', 'baz1');
 

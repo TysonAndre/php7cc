@@ -5,7 +5,7 @@ namespace code\Infrastructure;
 use Sstalle\php7cc\Infrastructure\CLIOutputBridge;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class CLIOutputBridgeTest extends \PHPUnit_Framework_TestCase
+class CLIOutputBridgeTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var CLIOutputBridge
@@ -17,9 +17,9 @@ class CLIOutputBridgeTest extends \PHPUnit_Framework_TestCase
      */
     protected $output;
 
-    public function setUp()
+    public function setUp(): void
     {
-        $this->output = $this->getMock('Symfony\Component\Console\Output\OutputInterface');
+        $this->output = $this->createMock('Symfony\Component\Console\Output\OutputInterface');
         $this->bridge = new CLIOutputBridge($this->output);
     }
 

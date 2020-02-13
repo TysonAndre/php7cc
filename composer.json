@@ -17,9 +17,8 @@
     "bcncommerce/json-stream": "0.3.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "4.7.*",
-    "mikey179/vfsStream": "~1.5",
-    "friendsofphp/php-cs-fixer": "~1.10"
+    "phpunit/phpunit": "^7.5.0",
+    "mikey179/vfsStream": "~1.5"
   },
   "bin": [
     "bin/php7cc"

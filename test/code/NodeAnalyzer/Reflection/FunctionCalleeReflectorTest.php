@@ -21,7 +21,7 @@ class FunctionCalleeReflectorTest extends AbstractCalleeReflectorTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->reflector = new FunctionCalleeReflector($this->buildFunctionReflector());
     }
@@ -53,13 +53,13 @@ class FunctionCalleeReflectorTest extends AbstractCalleeReflectorTest
      */
     protected function buildFunctionReflector()
     {
-        $reflector = $this->getMock('Sstalle\php7cc\Reflection\Reflector\FunctionReflectorInterface');
+        $reflector = $this->createMock('Sstalle\php7cc\Reflection\Reflector\FunctionReflectorInterface');
         $reflector->method('supports')
             ->will($this->returnCallback(function ($functionName) {
                 return in_array($functionName, array('in_array', 'sort'), true);
             }));
         $reflector->method('reflect')
-            ->willReturn($this->getMock('Sstalle\php7cc\Reflection\ReflectionFunctionAbstractInterface'));
+            ->willReturn($this->createMock('Sstalle\php7cc\Reflection\ReflectionFunctionAbstractInterface'));
 
         return $reflector;
     }

@@ -4,7 +4,7 @@ namespace code\Reflection\Internal;
 
 use Sstalle\php7cc\Reflection\Internal\ReflectionParameter;
 
-class ReflectionParameterTest extends \PHPUnit_Framework_TestCase
+class ReflectionParameterTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider internalReflectionParameterProvider
@@ -76,7 +76,7 @@ class ReflectionParameterTest extends \PHPUnit_Framework_TestCase
      */
     private function buildInternalReflectionParameter($name, $position, $isPassedByReference)
     {
-        $internalReflectionParameter = $this->getMock(
+        $internalReflectionParameter = $this->createMock(
             '\ReflectionParameter',
             array('getName', 'isPassedByReference', 'getPosition'),
             array(),

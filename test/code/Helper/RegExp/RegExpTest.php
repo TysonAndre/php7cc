@@ -4,7 +4,7 @@ namespace code\Helper\RegExp;
 
 use Sstalle\php7cc\Helper\RegExp\RegExp;
 
-class RegExpTest extends \PHPUnit_Framework_TestCase
+class RegExpTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @expectedException \InvalidArgumentException

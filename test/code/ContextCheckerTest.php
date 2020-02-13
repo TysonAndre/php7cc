@@ -1,6 +1,6 @@
 <?php
 
-class ContextCheckerTest extends \PHPUnit_Framework_TestCase
+class ContextCheckerTest extends \PHPUnit\Framework\TestCase
 {
     const TEST_FILE_EXTENSION = '.test';
 

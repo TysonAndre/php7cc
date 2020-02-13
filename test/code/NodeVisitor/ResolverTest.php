@@ -7,7 +7,7 @@ use Sstalle\php7cc\NodeVisitor\AbstractVisitor;
 use Sstalle\php7cc\NodeVisitor\Resolver;
 use Sstalle\php7cc\NodeVisitor\VisitorInterface;
 
-class ResolverTest extends \PHPUnit_Framework_TestCase
+class ResolverTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider testResolvesCorrectlyAccordingToLevelProvider
